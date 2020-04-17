@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To do - list</title>
+  <link rel="icon" href="./Picture1.png" sizes="20x20">
+  <link rel="stylesheet" type="text/css" href="./mycss.css">
+</head>
+
+<body onload="getname()">
+  <div class="prevent-small-screen"></div>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <h2 style="color: red;">To do list</h2>
+        <em style="color: navy;">Compete all your mission</em>
+      </div>
+      <div class="panel">
+        <p id="name-panel"></p>
+      </div>
+      <div class="time">
+        <p id="time"></p>
+      </div>
+    </header>
+    <nav>
+      <h4>My mission</h4>
+      <div class="btn-group">
+        <button class="done" onclick="addNew()">Add new</button>
+      </div>
+    </nav>
+    <main id="main">
+      <em>All your mission here:</em>
+
+    </main>
+  </div>
+  <footer>
+    <p>Practice code</p>
+    <p>&copy; version 0 - April 2020 </p>
+  </footer>
+  <div id="add" class="background-dialog" style="display:none">
+    <div class="new-container">
+      <div style=" text-align: right; cursor: pointer;" onclick="showHideById('add','none')">
+        <img src="./times-circle.svg" style="width: 40px;">
+      </div>
+      <h4>Add new mission!</h4>
+      <textarea id="mission-input" placeholder="Text here!" oninput="getNewMission()"></textarea>
+      <label for="priority"> Choose priority:
+        <div class="custom-dropdown">
+          <select id="priority" class="width-100 drop-down">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+      </label>
+      <button id='set-new' class="done width-100" onclick="setNew()" disabled>Add new</button>
+    </div>
+  </div>
+  <div id="name" class="background-dialog" style="display:none">
+    <div class="welcome-container">
+      <h4>Hello! What is your name?</h4>
+      <div style="display:flex; justify-content:space-around; margin-top: 30px; flex-wrap: wrap;">
+        <input type="text" placeholder="" id="inp-name" class="inp-name" oninput="checkerrormessage()" />
+        <button id='set-name' class="done" onclick="setname()">Get started</button>
+        <div class="error" id="err-name">Ops! You must enter something!</div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+  <script src="./js.js"></script>
+</body>
+
+</html>
